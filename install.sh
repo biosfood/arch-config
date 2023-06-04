@@ -5,8 +5,8 @@ read -p "Do you want to install essential packages? (y / N): "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
-	sudo pacman -S tree vi gnupg nodejs python3 python-pip wget unzip xclip --noconfirm
-	paru -S pulse-browser-bin konsole tbsm zettlr konsave vim-plug-neo --noconfirm
+	sudo pacman -S tree vi gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot --noconfirm
+	paru -S pulse-browser-bin konsole tbsm zettlr konsave vim-plug-neo dolphin-tabopts audacity meld --noconfirm
     pip3 install neovim
 fi
 
