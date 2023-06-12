@@ -6,8 +6,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
 	sudo pacman -S tree vi gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot --noconfirm
-	paru -S pulse-browser-bin konsole tbsm zettlr konsave vim-plug-neo dolphin-tabopts audacity meld --noconfirm
+	paru -S pulse-browser-bin konsole tbsm zettlr konsave vim-plug-neo dolphin-tabopts audacity meld snapd barrier --noconfirm
     pip3 install neovim
+    sudo systemctl enable --now snapd.socket
 fi
 
 read -p "Do you want to insert default configuration files? (y / N): "
@@ -24,6 +25,9 @@ then
 
   echo "Inserting neovim setup script . . ."
   cp .config/nvim/init.vim ~/.config/nvim/
+  
+    echo "Moving barrier configuration file..."
+    cp ./barrier.conf ~
 fi
 
 read -p "Do you want to install the custom font? (y / N): "
