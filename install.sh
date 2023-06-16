@@ -6,9 +6,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
 	sudo pacman -S tree vi gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot --noconfirm
-	paru -S pulse-browser-bin konsole tbsm zettlr konsave vim-plug-neo dolphin-tabopts audacity meld snapd barrier --noconfirm
+	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier --noconfirm
     pip3 install neovim
     sudo systemctl enable --now snapd.socket
+fi
+
+read -p "Do you want to install KDE utilities? (y / N): "
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    paru -S konsole konsave kmail krita kaffeine --noconfirm
 fi
 
 read -p "Do you want to insert default configuration files? (y / N): "
