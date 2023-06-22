@@ -5,8 +5,8 @@ read -p "Do you want to install essential packages? (y / N): "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
-	sudo pacman -S tree vi gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot --noconfirm
-	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier --noconfirm
+	sudo pacman -S tree vi gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot postgresql --noconfirm
+	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools --noconfirm
     pip3 install neovim
     sudo systemctl enable --now snapd.socket
 fi
@@ -14,7 +14,13 @@ fi
 read -p "Do you want to install KDE utilities? (y / N): "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    paru -S konsole konsave kmail krita kaffeine --noconfirm
+    paru -S konsole konsave kmail krita kaffeine partitionmanager --noconfirm
+fi
+
+read -p "Do you want to install yarn? (y / N): "
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    curl -o- -L https://yarnpkg.com/install.sh | bash
 fi
 
 read -p "Do you want to insert default configuration files? (y / N): "
