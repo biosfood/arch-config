@@ -6,7 +6,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
 	sudo pacman -S tree vi gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot postgresql --noconfirm
-	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools --noconfirm
+	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools xdotool easyeda --noconfirm
     pip3 install neovim
     sudo systemctl enable --now snapd.socket
 fi
@@ -14,7 +14,7 @@ fi
 read -p "Do you want to install KDE utilities? (y / N): "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    paru -S konsole konsave kmail krita kaffeine partitionmanager --noconfirm
+    paru -S konsole konsave kmail krita kaffeine partitionmanager calligra imath --noconfirm
 fi
 
 read -p "Do you want to install yarn? (y / N): "
