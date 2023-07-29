@@ -1,0 +1,2 @@
+plasmaConfig.knsv filter=lfs diff=lfs merge=lfs -binary
+plasmaConfig.knsv filter=lfs diff=lfs merge=lfs -text
