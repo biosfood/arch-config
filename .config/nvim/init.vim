@@ -12,8 +12,8 @@ set wildmenu
 set clipboard=unnamedplus
 
 set expandtab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set wildmode=longest,list
 
 filetype plugin indent on
@@ -78,6 +78,7 @@ require("nvim-tree").setup({
 local lspconfig = require('lspconfig')
 lspconfig.tsserver.setup {}
 lspconfig.pyright.setup {}
+lspconfig.clangd.setup {}
 
 EOF
 
