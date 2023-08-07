@@ -14,7 +14,7 @@ fi
 read -p "Do you want to install KDE utilities? (y / N): "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    paru -S konsole konsave kmail krita kaffeine partitionmanager calligra imath --noconfirm
+    paru -S konsole konsave kmail krita kaffeine partitionmanager calligra imath kalendar --noconfirm
 fi
 
 read -p "Do you want to install yarn? (y / N): "
