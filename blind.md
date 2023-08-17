@@ -43,13 +43,8 @@ At this point, you can get the remaingin configuration files from this project u
 Next up, install a display manager (I'm using tbsm), the X server and a desktop environment (This manual is using KDE plasma) as well as a terminal emulator:
 
 ```bash
-paru -S tbsm
-pacman -S xorg-server  
-pacman -S xorg  
-pacman -S xorg-init  
-pacman -S xorg-xinit
-pacman -S plasma
-paru -S konsole
+paru -S tbsm konsole
+pacman -S xorg-server xorg xorg-init xorg-xinit plasma
 ```
 
 After copying `.bashrc` from this repository to your home folder, tbsm will be automatically started when starting your computer. Select the KDE plasma option to go to the Desktop. Open the `Konsole` program to get a console for further configuration.
