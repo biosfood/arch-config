@@ -6,7 +6,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
 	sudo pacman -S tree gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot postgresql nano --noconfirm
-	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools xdotool easyeda keepassxc --noconfirm
+	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools xdotool easyeda keepassxc obsidian --noconfirm
     pip3 install neovim
     sudo systemctl enable --now snapd.socket
 fi
