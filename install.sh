@@ -6,7 +6,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
 	sudo pacman -S tree gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot postgresql nano net-tools --noconfirm
-	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools xdotool easyeda keepassxc obsidian --noconfirm
+	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools xdotool easyeda keepassxc obsidian bluedevil --noconfirm
     pip3 install neovim
     sudo systemctl enable --now snapd.socket
 fi
@@ -35,8 +35,8 @@ then
 	konsave -i plasmaConfig.knsv
 	konsave -a plasmaConfig
 
-  echo "Inserting neovim setup script . . ."
-  cp .config/nvim/init.vim ~/.config/nvim/
+    echo "Inserting neovim setup script . . ."
+    cp .config/nvim/init.vim ~/.config/nvim/
   
     echo "Moving barrier configuration file..."
     cp ./barrier.conf ~
@@ -54,7 +54,14 @@ fi
 read -p "Do you want to install some LSP language servers? (y / N): "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  sudo pacman -S pyright npm --noconfirm
-  sudo npm install -g typescript typescript-language-server
-  paru -S neovim-coc-bin --noconfirm
+    sudo pacman -S pyright npm --noconfirm
+    sudo npm install -g typescript typescript-language-server
+    paru -S neovim-coc-bin --noconfirm
+fi
+
+read -p "Do you want to enable necessary services? (y / N): "
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo systemctl enable bluetooth
+    sudo systemctl start bluetooth
 fi
