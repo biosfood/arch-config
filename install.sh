@@ -5,8 +5,8 @@ read -p "Do you want to install essential packages? (y / N): "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	echo "Installing bare essenital programs using paru..."
-	sudo pacman -S tree gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot postgresql nano net-tools maven --noconfirm
-	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools xdotool easyeda keepassxc obsidian bluedevil img2pdf --noconfirm
+	sudo pacman -S tree gnupg nodejs python3 python-pip wget unzip xclip ephoto flameshot postgresql nano net-tools maven boost-libs sysfsutils --noconfirm
+	paru -S pulse-browser-bin tbsm zettlr vim-plug-neo dolphin-tabopts audacity meld snapd barrier android-sdk-platform-tools xdotool easyeda keepassxc obsidian bluedevil img2pdf ghostscript libreoffice kmscon-patched-git --noconfirm
     pip3 install neovim
     sudo systemctl enable --now snapd.socket
 fi
